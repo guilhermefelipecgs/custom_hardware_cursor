@@ -3,7 +3,7 @@ extends Node
 var cursors = ['arrow', 'arrow2']
 
 var current_cursor = 'arrow'
-var current_size = 64
+var current_size = 32
 var hotspot = Vector2()
 var toggle = true
 
@@ -13,7 +13,7 @@ func _process(delta):
 func update_cursor():
 	if toggle:
 		hotspot = Vector2(current_size*3/64, current_size*3/64)
-		Input.set_custom_mouse_cursor(load("res://cursors/" + current_cursor + "_" + str(current_size) + ".png"), hotspot)
+		Input.set_custom_mouse_cursor(load("res://cursors/" + current_cursor + "_" + str(current_size) + ".png"))
 	else:
 		$cursor.texture = load("res://cursors/" + current_cursor + "_" + str(current_size) + ".png")
 		Input.set_custom_mouse_cursor(null)
