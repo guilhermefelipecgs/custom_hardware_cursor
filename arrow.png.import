@@ -2,7 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow_8.png-4e5d62709556200b38d20dfda1c9b513.stex"
+path="res://.import/arrow.png-9a52328c9c8f79a188b7fabb13b1f3fc.stex"
+
+[deps]
+
+source_md5="ddc4ea5ab16d53209d56a41c946e8319"
 
 [params]
 

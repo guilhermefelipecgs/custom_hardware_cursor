@@ -1,335 +1,52 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://node.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+var arrow = load(\"res://arrow.png\")
+var beam = load(\"res://beam.png\")
+
+func _ready():
+	Input.set_custom_mouse_cursor(arrow)
+	Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)"
 
 [node name="node" type="Node"]
 
-script = ExtResource( 1 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="panel" type="Panel" parent="."]
+[node name="text_edit" type="TextEdit" parent="."]
 
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -136.0
-margin_top = -133.0
-margin_right = 161.0
-margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="label" type="Label" parent="panel"]
-
-anchor_left = 0.5
+anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -66.5
-margin_top = 16.0
-margin_right = 66.5
-margin_bottom = 30.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Change cursor image"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="label3" type="Label" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = -13.5
-margin_top = 71.0
-margin_right = 12.5
-margin_bottom = 85.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Size"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="label2" type="Label" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -103.5
-margin_top = 31.5
-margin_right = 102.5
-margin_bottom = 45.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Toggle hardware/software cursor"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="cursor_1" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -90.5
-margin_top = -58.5
-margin_right = -10.5
-margin_bottom = -38.5
+margin_left = 401.0
+margin_top = 209.0
+margin_right = 645.0
+margin_bottom = 255.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "cursor 1"
-flat = false
-
-[node name="cursor_2" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 9.5
-margin_top = -58.5
-margin_right = 89.5
-margin_bottom = -38.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "cursor 2"
-flat = false
-
-[node name="cursor_3" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -40.5
-margin_top = 51.5
-margin_right = 39.5
-margin_bottom = 71.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "software"
-flat = false
-
-[node name="size_8" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -138.5
-margin_top = -4.5
-margin_right = -118.5
-margin_bottom = 15.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "8"
-flat = false
-
-[node name="size_16" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -108.5
-margin_top = -4.5
-margin_right = -78.5
-margin_bottom = 15.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "16"
-flat = false
-
-[node name="size_32" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -68.5
-margin_top = -4.5
-margin_right = -38.5
-margin_bottom = 15.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "32"
-flat = false
-
-[node name="size_64" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.5
-margin_top = -4.5
-margin_right = 1.5
-margin_bottom = 15.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "64"
-flat = false
-
-[node name="size_96" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 11.5
-margin_top = -4.5
-margin_right = 41.5
-margin_bottom = 15.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "96"
-flat = false
-
-[node name="size_128" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 51.5
-margin_top = -4.5
-margin_right = 91.5
-margin_bottom = 15.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "128"
-flat = false
-
-[node name="size_256" type="Button" parent="panel"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 99.5
-margin_top = -4.5
-margin_right = 139.5
-margin_bottom = 15.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "256"
-flat = false
-
-[node name="cursor" type="Sprite" parent="."]
-
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[connection signal="pressed" from="panel/cursor_1" to="." method="_on_cursor_1_pressed"]
-
-[connection signal="pressed" from="panel/cursor_2" to="." method="_on_cursor_2_pressed"]
-
-[connection signal="pressed" from="panel/cursor_3" to="." method="_on_cursor_3_pressed"]
-
-[connection signal="pressed" from="panel/size_8" to="." method="_on_size_8_pressed"]
-
-[connection signal="pressed" from="panel/size_16" to="." method="_on_size_16_pressed"]
-
-[connection signal="pressed" from="panel/size_32" to="." method="_on_size_32_pressed"]
-
-[connection signal="pressed" from="panel/size_64" to="." method="_on_size_64_pressed"]
-
-[connection signal="pressed" from="panel/size_96" to="." method="_on_size_96_pressed"]
-
-[connection signal="pressed" from="panel/size_128" to="." method="_on_size_128_pressed"]
-
-[connection signal="pressed" from="panel/size_256" to="." method="_on_size_256_pressed"]
+text = "teste"
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
 
 
